@@ -1,0 +1,15 @@
+<h1>Matches</h1>
+
+{% for m in matches %}
+<div>
+  <h3>{{ m.found_item.title }}</h3>
+  <p>Score: {{ m.score }}</p>
+
+  <a href="/claim/{{ m.found_item.item_id }}">
+    Claim Item
+  </a>
+  <a href="/chat/2">
+    <button>Chat with Owner</button>
+  </a>
+</div>
+{% endfor %}

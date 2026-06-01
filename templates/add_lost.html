@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Lost Item</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <form method="POST"
+          enctype="multipart/form-data"
+          class="auth-box">
+
+        <h1>Report Lost Item</h1>
+
+        <input type="text"
+               name="item_name"
+               placeholder="Item Name"
+               required>
+
+        <textarea name="description"
+                  placeholder="Description"></textarea>
+
+        <input type="file"
+               name="image"
+               accept="image/*"
+               capture="environment"
+               required>
+
+        <button type="submit">Upload</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

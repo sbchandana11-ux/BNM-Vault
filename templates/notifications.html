@@ -1,0 +1,21 @@
+<h2>Notifications</h2>
+<div id="n"></div>
+
+<script>
+
+function load(){
+ fetch("/notifications")
+ .then(r=>r.json())
+ .then(d=>{
+  let b=document.getElementById("n");
+  b.innerHTML="";
+  d.data.forEach(x=>{
+    b.innerHTML += `<p>${x.message}</p>`;
+  });
+ })
+}
+
+setInterval(load,3000);
+load();
+
+</script>

@@ -1,0 +1,11 @@
+<h1>Admin Claims</h1>
+
+{% for c in claims %}
+<div>
+  <h3>{{ c.title }}</h3>
+  <p>{{ c.name }}</p>
+  <p>{{ c.proof_message }}</p>
+
+  <a href="/approve/{{ c.claim_id }}">Approve</a>
+</div>
+{% endfor %}

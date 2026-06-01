@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="details-page">
+
+    <div class="details-card">
+
+        <div class="details-image">
+
+            {% if item.image %}
+                <img src="{{ url_for('static', filename='uploads/' + item.image) }}">
+            {% else %}
+                <img src="https://via.placeholder.com/500x350">
+            {% endif %}
+
+        </div>
+
+        <div class="details-info">
+
+            <span class="status-badge">
+                {{ item.status }}
+            </span>
+
+            <h1>{{ item.title }}</h1>
+
+            <p class="details-category">
+                {{ item.category }}
+            </p>
+
+            <p class="details-location">
+                📍 {{ item.location }}
+            </p>
+
+            <div class="details-description">
+                {{ item.description }}
+            </div>
+
+            <div class="details-buttons">
+
+                <a href="/chat" class="btn-primary">
+                    Chat
+                </a>
+
+                <button class="btn-secondary">
+                    Claim Item
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

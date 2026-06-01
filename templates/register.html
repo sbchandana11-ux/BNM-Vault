@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - BNM Vault</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-card">
+
+        <h1>Create Account</h1>
+
+        <p>
+            Join BNM Vault and help recover lost items smarter.
+        </p>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+
+        <div class="flash-message">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+
+        {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+
+            <select
+                name="role"
+                id="role"
+                onchange="toggleFields()"
+                required>
+
+                <option value="">Select Role</option>
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+                <option value="worker">Worker</option>
+
+            </select>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required>
+
+            <div id="collegeField" style="display:none;">
+
+                <input
+                    type="text"
+                    name="college_id"
+                    placeholder="College ID / USN">
+
+            </div>
+
+            <div id="departmentField" style="display:none;">
+
+                <input
+                    type="text"
+                    name="department"
+                    placeholder="Department">
+
+            </div>
+
+            <div id="employeeField" style="display:none;">
+
+                <input
+                    type="text"
+                    name="employee_id"
+                    placeholder="Employee ID">
+
+            </div>
+
+            <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                required>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required>
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    required>
+
+                <i
+                    class="fa-solid fa-eye toggle-password"
+                    onclick="togglePassword()">
+                </i>
+
+            </div>
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+        <a href="{{ url_for('login') }}"
+           class="auth-link">
+
+           Already have an account? Login
+
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+    let x = document.getElementById("password");
+
+    if(x.type === "password"){
+        x.type = "text";
+    }else{
+        x.type = "password";
+    }
+}
+
+function toggleFields(){
+
+    let role =
+    document.getElementById("role").value;
+
+    let collegeField =
+    document.getElementById("collegeField");
+
+    let departmentField =
+    document.getElementById("departmentField");
+
+    let employeeField =
+    document.getElementById("employeeField");
+
+    if(role === "student"){
+
+        collegeField.style.display = "block";
+        departmentField.style.display = "block";
+        employeeField.style.display = "none";
+
+    }
+    else if(role === "faculty"){
+
+        collegeField.style.display = "none";
+        departmentField.style.display = "block";
+        employeeField.style.display = "block";
+
+    }
+    else if(role === "worker"){
+
+        collegeField.style.display = "none";
+        departmentField.style.display = "none";
+        employeeField.style.display = "block";
+
+    }
+    else{
+
+        collegeField.style.display = "none";
+        departmentField.style.display = "none";
+        employeeField.style.display = "none";
+
+    }
+}
+
+window.onload = toggleFields;
+
+</script>
+
+</body>
+</html>

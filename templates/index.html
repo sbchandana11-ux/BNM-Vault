@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>BNM VAULT</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+
+<div class="hamburger"
+     onclick="toggleMenu()">
+    ☰
+</div>
+
+<div class="logo">
+    🔐 BNM VAULT
+</div>
+
+
+</nav>
+
+<!-- =========================
+     SIDEBAR MENU
+========================= -->
+
+<div id="sideMenu" class="side-menu">
+
+    <div class="menu-header">
+        <h2>BNM VAULT</h2>
+        <p>Dashboard</p>
+    </div>
+
+    <a href="/">🏠 Home</a>
+
+<a href="/lost_items">
+    🔴 Lost Items
+</a>
+
+<a href="/found_items">
+    🟢 Found Items
+</a>
+
+<a href="/archive_items">
+    📦 Archive Vault
+</a>
+
+<a href="/my_reports">
+    📄 My Reports
+</a>
+
+<a href="/my_claims">
+    🛡 My Claims
+</a>
+
+<a href="tel:+919900000001">
+    📞 Contact Admin
+</a>
+
+<a href="/logout">
+    🚪 Logout
+</a>
+
+
+</div>
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero">
+
+
+<div class="grid-bg"></div>
+
+<div class="hero-content">
+
+    <div class="ai-badge">
+        ✨ AI Matching Active
+    </div>
+
+    <h1>
+        Lost something at BNM?<br>
+
+        <span class="gradient-text">
+            BNM VAULT finds it smarter.
+        </span>
+    </h1>
+
+    <p>
+        AI-powered campus-wide lost & found platform
+        with smart matching, secure claims,
+        and real-time recovery tracking.
+    </p>
+
+    <!-- MAIN BUTTONS -->
+
+    <div class="hero-buttons">
+
+        <a href="{{ url_for('add_lost_item') }}"
+           class="primary-btn">
+           Report Lost Item
+        </a>
+
+        <a href="{{ url_for('add_found_item') }}"
+           class="primary-btn">
+           Report Found Item
+        </a>
+
+    </div>
+
+    <br>
+
+    <!-- VIEW BUTTONS -->
+
+    <div class="hero-buttons">
+
+        <a href="{{ url_for('lost_items') }}"
+           class="secondary-btn">
+           View Lost Items
+        </a>
+
+        <a href="{{ url_for('found_items') }}"
+           class="secondary-btn">
+           View Found Items
+        </a>
+
+        <a href="{{ url_for('archive_items') }}"
+           class="secondary-btn">
+           Archive Vault
+        </a>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h2>{{ total_users }}</h2>
+            <p>👥 Vault Members</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>{{ total_lost }}</h2>
+            <p>🔴 Lost Reports</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>{{ total_found }}</h2>
+            <p>🟢 Found Reports</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>{{ total_claimed }}</h2>
+            <p>✅ Items Reunited</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =========================
+     ADMIN HELP SECTION
+========================= -->
+
+<section class="help-section">
+
+
+<div class="help-card">
+
+    <h2>
+        Need Help Reporting an Item?
+    </h2>
+
+    <p>
+
+        If you are unable to use the portal,
+        you can directly contact the Vault Admin.
+
+        The admin can create Lost or Found
+        reports on your behalf.
+
+    </p>
+
+    <div class="help-buttons">
+
+        <a href="tel:+919900000001"
+           class="primary-btn">
+
+            📞 Call Admin
+
+        </a>
+
+        <a href="https://wa.me/919900000001"
+           target="_blank"
+           class="secondary-btn">
+
+            💬 WhatsApp Admin
+
+        </a>
+
+    </div>
+
+    <div class="office-details">
+
+        <p>
+            <strong>Vault Office:</strong>
+            Block A, Room 101
+        </p>
+
+        <p>
+            <strong>Hours:</strong>
+            9:00 AM – 5:00 PM
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     JS
+========================= -->
+
+<script>
+
+function toggleMenu()
+{
+    document
+        .getElementById("sideMenu")
+        .classList
+        .toggle("active");
+}
+
+</script>
+
+</body>
+
+</html>
+
+
+</section>
+
+</body>
+</html>

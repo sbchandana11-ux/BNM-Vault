@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Claims</title>
+</head>
+<body>
+
+<h1>My Claims</h1>
+
+{% for claim in claims %}
+
+<div>
+
+    <h3>{{ claim.title }}</h3>
+
+    <p>Status: {{ claim.status }}</p>
+
+    <p>{{ claim.proof_message }}</p>
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>

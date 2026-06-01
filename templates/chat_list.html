@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">
+    Student <span class="gradient-text">Chats</span>
+</h1>
+
+<p class="page-subtitle">
+    Connect with students regarding lost and found items.
+</p>
+
+<div class="chat-box">
+
+    <div class="messages">
+
+        <div class="message received">
+            Hi, I think I found your wallet near library block.
+        </div>
+
+        <div class="message sent">
+            Really? Can you share the image?
+        </div>
+
+        <div class="message received">
+            Sure, I'll upload it now.
+        </div>
+
+    </div>
+
+    <form>
+
+        <input type="text"
+               class="input-box"
+               placeholder="Type your message...">
+
+    </form>
+
+</div>
+
+{% endblock %}

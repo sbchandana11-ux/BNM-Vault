@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Reports</title>
+</head>
+<body>
+
+<h1>My Lost Reports</h1>
+
+{% for item in lost_reports %}
+<p>{{ item.title }}</p>
+{% endfor %}
+
+<h1>My Found Reports</h1>
+
+{% for item in found_reports %}
+<p>{{ item.title }}</p>
+{% endfor %}
+
+</body>
+</html>

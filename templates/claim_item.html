@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Claim Item</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="form-page">
+
+    <div class="form-container">
+
+        <h1>Verify Ownership</h1>
+
+        <h3>{{ item.title }}</h3>
+
+        <p>
+            Explain why this item belongs to you.
+        </p>
+
+        <form method="POST">
+
+            <textarea
+                name="proof_message"
+                placeholder="Example: The AirPods case has a small scratch on the left side and my name sticker inside..."
+                required>
+            </textarea>
+
+            <button type="submit">
+                Submit Claim
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Archive Vault</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+    <h1>📦 Archive Vault</h1>
+
+    <h2>Archived Lost Items</h2>
+
+    <div class="dashboard-grid">
+
+        {% for item in lost_items %}
+
+        <div class="item-card">
+
+            <h3>{{ item.title }}</h3>
+
+            <p><strong>Category:</strong> {{ item.category }}</p>
+
+            <p><strong>Location:</strong> {{ item.location }}</p>
+
+            <p><strong>Date:</strong> {{ item.date_lost }}</p>
+
+            <p>{{ item.description }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <br><br>
+
+    <h2>Archived Found Items</h2>
+
+    <div class="dashboard-grid">
+
+        {% for item in found_items %}
+
+        <div class="item-card">
+
+            <h3>{{ item.title }}</h3>
+
+            <p><strong>Category:</strong> {{ item.category }}</p>
+
+            <p><strong>Location:</strong> {{ item.location_found }}</p>
+
+            <p><strong>Date:</strong> {{ item.date_found }}</p>
+
+            <p>{{ item.description }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+</body>
+</html>

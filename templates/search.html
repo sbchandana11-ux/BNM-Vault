@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">
+    Search <span class="gradient-text">Results</span>
+</h1>
+
+<p class="subtitle">
+    Showing results for "{{ query }}"
+</p>
+
+<h2 class="section-title">Lost Items</h2>
+
+<div class="items-grid">
+
+    {% for item in lost_results %}
+
+    <a href="/lost-item/{{ item.item_id }}" class="item-card">
+
+        <img src="{{ url_for('static', filename='uploads/' + item.image) }}">
+
+        <div class="item-content">
+
+            <h3>{{ item.title }}</h3>
+
+            <p>{{ item.description[:80] }}...</p>
+
+            <span class="badge">
+                {{ item.status }}
+            </span>
+
+        </div>
+
+    </a>
+
+    {% endfor %}
+
+</div>
+
+<br><br>
+
+<h2 class="section-title">Found Items</h2>
+
+<div class="items-grid">
+
+    {% for item in found_results %}
+
+    <a href="/found-item/{{ item.item_id }}" class="item-card">
+
+        <img src="{{ url_for('static', filename='uploads/' + item.image) }}">
+
+        <div class="item-content">
+
+            <h3>{{ item.title }}</h3>
+
+            <p>{{ item.description[:80] }}...</p>
+
+            <span class="badge">
+                {{ item.status }}
+            </span>
+
+        </div>
+
+    </a>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

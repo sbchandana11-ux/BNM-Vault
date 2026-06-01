@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Found Item</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="form-page">
+
+    <div class="form-container">
+
+        <h1>🎯 Report Found Item</h1>
+
+        <form method="POST"
+              enctype="multipart/form-data">
+
+            <input
+                type="text"
+                name="title"
+                placeholder="Item Title"
+                required>
+
+            <input
+                type="text"
+                name="category"
+                placeholder="Category"
+                required>
+
+            <textarea
+                name="description"
+                placeholder="Description"
+                required></textarea>
+
+            <input
+                type="text"
+                name="location"
+                placeholder="Found Location"
+                required>
+
+            <input
+                type="date"
+                name="date_found"
+                required>
+
+            <input
+                type="file"
+                name="image">
+
+            <button type="submit">
+                Submit Found Item
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

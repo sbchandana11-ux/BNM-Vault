@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>{{ item.title }}</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<section class="detail-page">
+
+<div class="detail-card">
+
+{% if item.image %}
+<img
+src="{{ url_for('static', filename='uploads/' + item.image) }}"
+class="detail-image">
+{% endif %}
+<div class="detail-info">
+
+<h1>{{ item.title }}</h1>
+
+<p>{{ item.description }}</p>
+
+<p><strong>Category:</strong> {{ item.category }}</p>
+
+<p><strong>Location:</strong> {{ item.location }}</p>
+
+<p><strong>Date Lost:</strong> {{ item.date_lost }}</p>
+
+<hr>
+
+<h2>Owner Information</h2>
+
+<p>{{ item.name }}</p>
+
+<p>{{ item.email }}</p>
+
+<p>{{ item.phone }}</p>
+
+<a href="mailto:{{ item.email }}"
+class="chat-btn">
+
+📧 Contact Owner
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
