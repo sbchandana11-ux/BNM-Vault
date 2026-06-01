@@ -13,7 +13,7 @@ app.secret_key = "bnm_secret_key"
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Cherry1104!",
+    password="x",
     database="bnmvault_db"
 )
 
