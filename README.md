@@ -21,4 +21,4 @@ A Smart Lost & Found System for BNM Institute of Technology.
 (Add project screenshots here)
 
 ## Author
-Chaitra M B
+Chandana S B
